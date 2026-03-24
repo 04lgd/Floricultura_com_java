@@ -19,6 +19,8 @@ public class Flor extends Produto {
         this.cor = cor;
         this.origem = origem;
         this.tipoDeFlor = tipoDeFlor;
+
+
     }
 
     @Override
@@ -33,6 +35,12 @@ public class Flor extends Produto {
                 ", preco=" + preco +
                 ", qntEstoque=" + qntEstoque +
                 '}';
+    }
+
+    @Override
+    public void desconto(int qntVendida) {
+        double valorFinal = (getPreco()*qntVendida)*0.95;
+        System.out.println("Valor total com desconto de cliente: " + valorFinal);
     }
 
     public String getCor() {

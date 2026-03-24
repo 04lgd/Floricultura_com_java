@@ -13,7 +13,13 @@ public class TesteVenda01 {
         controleEstoque.setProdutos(produtos);
 
         controleEstoque.venda(2);
-        System.out.println("Quantidade estoque pós venda: " + produtos[0].getQntEstoque());
+
+        System.out.println("--- VENDA APROVADA! ---");
+        System.out.println("Valor total sem desconto: " + controleEstoque.getQntVendida()*segundaFlor.getPreco());
+        segundaFlor.desconto(2);
+
+        System.out.println("--- INFORMAÇÕES PRIVADAS DA LOJA ---");
+        System.out.println("Quantidade de " + segundaFlor.getNome() + " no estoque pós venda: " + produtos[0].getQntEstoque());
         System.out.println("Lucro total: " + controleEstoque.getLucroTotal());
     }
 }

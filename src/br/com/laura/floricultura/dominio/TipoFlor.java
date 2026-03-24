@@ -11,7 +11,7 @@ public enum TipoFlor {
         this.TIPO_FLOR = tipoFlor;
     }
 
-    public static TipoFlor tipoFlorPorNomeFlor (String TIPO_FLOR) {
+    public static TipoFlor tipoFlorPorNomeFlor (String TIPO_FLOR) { //o metodo precisa pertencer à classe para que eu possa acessá-lo nos testes, pois a partir do static ele pertence à classe, e não ao objeto
 
         for (TipoFlor tipoFlor : values()) {
             if(tipoFlor.getTIPO_FLOR().equals(TIPO_FLOR)) {

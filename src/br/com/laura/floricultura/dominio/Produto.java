@@ -1,6 +1,6 @@
 package br.com.laura.floricultura.dominio;
 
-public class Produto {
+public abstract class Produto {
     protected int id;
     protected String nome;
     protected double preco;
@@ -13,6 +13,7 @@ public class Produto {
         this.qntEstoque = qntEstoque;
     }
 
+    public abstract void desconto(int qntVendida);
 
     public int getId() {
         return id;
