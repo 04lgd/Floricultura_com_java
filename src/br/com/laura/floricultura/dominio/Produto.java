@@ -13,7 +13,7 @@ public abstract class Produto {
         this.qntEstoque = qntEstoque;
     }
 
-    public abstract void desconto(int qntVendida);
+    public abstract double valorComDesconto(int qntVendida);
 
     public int getId() {
         return id;

@@ -5,13 +5,15 @@ public class Venda {
     protected double lucroTotal = 0;
     protected Produto produto;
     protected ControleEstoque controle;
+    protected double valorFinal;
 
     public void venda(int qntVendida) {
         this.qntVendida = qntVendida;
         if (this.produto != null) {
-            lucroTotal += qntVendida*produto.getPreco();
             controle.impactoEstoqueTotal(this.getQntVendida());
             controle.impactoEstoqueProd(this.getQntVendida(), this.getProduto());
+            setValorFinal(produto.valorComDesconto(this.qntVendida));
+            lucroTotal += valorFinal;
         }
 
     }
@@ -46,5 +48,13 @@ public class Venda {
 
     public void setControle(ControleEstoque controle) {
         this.controle = controle;
+    }
+
+    public double getValorFinal() {
+        return valorFinal;
+    }
+
+    public void setValorFinal(double valorFinal) {
+        this.valorFinal = valorFinal;
     }
 }
