@@ -1,36 +1,24 @@
 package br.com.laura.floricultura.dominio;
 
 public class ControleEstoque {
-    private double lucroTotal = 0;
-    private Produto[] produtos;
-    private int qntVendida;
+    protected int estoqueTotal = 30;
+    protected int qntVendida;
+    protected Produto produto;
 
-    public void venda(int qntVendida) {
-        this.qntVendida = qntVendida;
-        if (produtos != null && produtos.length > 0) {
-            int novoEstoque = produtos[0].getQntEstoque() - qntVendida;
-            produtos[0].setQntEstoque(novoEstoque);
-
-            lucroTotal += qntVendida*produtos[0].getPreco();
-        }
-
+    public void impactoEstoqueTotal(int qntVendida) {
+        this.estoqueTotal -= qntVendida;
     }
 
-    public double getLucroTotal() {
-        return lucroTotal;
+    public void impactoEstoqueProd (int qntVendida, Produto produto) {
+        produto.setQntEstoque(produto.getQntEstoque() - qntVendida);
     }
 
-    public void setLucroTotal(double lucroTotal) {
-        this.lucroTotal = lucroTotal;
+    public int getEstoqueTotal() {
+        return estoqueTotal;
     }
 
-
-    public Produto[] getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(Produto[] produtos) {
-        this.produtos = produtos;
+    public void setEstoqueTotal(int estoqueTotal) {
+        this.estoqueTotal = estoqueTotal;
     }
 
     public int getQntVendida() {

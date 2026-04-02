@@ -6,7 +6,7 @@ public abstract class Produto {
     protected double preco;
     protected int qntEstoque;
 
-    public Produto(String nome, int id, int preco, int qntEstoque) {
+    public Produto(String nome, int id, double preco, int qntEstoque) {
         this.nome = nome;
         this.id = id;
         this.preco = preco;
