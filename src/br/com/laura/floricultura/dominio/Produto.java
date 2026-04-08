@@ -11,6 +11,10 @@ public abstract class Produto {
         this.id = id;
         this.preco = preco;
         this.qntEstoque = qntEstoque;
+
+        if (this.preco <= 0 || this.qntEstoque < 0) {
+            throw new IllegalArgumentException("Nem preço e quantidade em estoque podem ser negativos em um produto.");
+        }
     }
 
     public abstract double valorComDesconto(int qntVendida);

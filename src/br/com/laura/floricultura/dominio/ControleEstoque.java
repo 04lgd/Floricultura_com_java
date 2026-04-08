@@ -6,11 +6,19 @@ public class ControleEstoque {
     protected Produto produto;
 
     public void impactoEstoqueTotal(int qntVendida) {
-        this.estoqueTotal -= qntVendida;
+        if ((this.estoqueTotal -= qntVendida) < 0) {
+            throw new IllegalArgumentException("O estoque não pode ficar negativo.");
+        } else {
+            this.estoqueTotal -= qntVendida;
+        }
     }
 
     public void impactoEstoqueProd (int qntVendida, Produto produto) {
-        produto.setQntEstoque(produto.getQntEstoque() - qntVendida);
+        if ((produto.getQntEstoque() - qntVendida) < 0) {
+            throw new IllegalArgumentException("O estoque não pode ficar negativo.");
+        } else {
+            produto.setQntEstoque(produto.getQntEstoque() - qntVendida);
+        }
     }
 
     public int getEstoqueTotal() {

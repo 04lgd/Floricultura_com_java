@@ -22,6 +22,6 @@ public class TesteVenda01 {
         System.out.println("--- INFORMAÇÕES PRIVADAS DA LOJA ---");
         System.out.println("Estoque total pós venda: " + controle.getEstoqueTotal());
         System.out.println("Quantidade de " + segundaFlor.getNome() + " no estoque pós venda: " + segundaFlor.getQntEstoque());
-        System.out.println("Lucro total: " + venda01.getLucroTotal());
+        System.out.println("Lucro total: " + venda01.getFaturamentoTotal());
     }
 }

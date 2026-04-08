@@ -2,7 +2,7 @@ package br.com.laura.floricultura.dominio;
 
 public class Venda {
     protected int qntVendida;
-    protected double lucroTotal = 0;
+    protected double faturamentoTotal = 0;
     protected Produto produto;
     protected ControleEstoque controle;
     protected double valorFinal;
@@ -13,9 +13,8 @@ public class Venda {
             controle.impactoEstoqueTotal(this.getQntVendida());
             controle.impactoEstoqueProd(this.getQntVendida(), this.getProduto());
             setValorFinal(produto.valorComDesconto(this.qntVendida));
-            lucroTotal += valorFinal;
+            faturamentoTotal = valorFinal;
         }
-
     }
 
     public int getQntVendida() {
@@ -26,12 +25,12 @@ public class Venda {
         this.qntVendida = qntVendida;
     }
 
-    public double getLucroTotal() {
-        return lucroTotal;
+    public double getFaturamentoTotal() {
+        return faturamentoTotal;
     }
 
-    public void setLucroTotal(double lucroTotal) {
-        this.lucroTotal = lucroTotal;
+    public void setFaturamentoTotal(double faturamentoTotal) {
+        this.faturamentoTotal = faturamentoTotal;
     }
 
     public Produto getProduto() {
